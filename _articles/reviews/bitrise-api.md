@@ -1,25 +1,24 @@
 ---
-title: Bitrise.io API v0.1 (Work In Progress)
-menu:
-  api:
-    weight: 4
-    title: Bitrise.io API v0.1 (Work in Progress)
+title: Bitrise API - draft
+redirect_from: []
+date: 2019-01-15 13:17:51 +0000
+published: false
 
 ---
 {% include message_box.html type="warning" title="The API is work-in-progress" content=" The API is work-in-progress: we will add new endpoints and possibly update the existing ones in the future. "%}
 
-* Join the discussion at: [https://discuss.bitrise.io/t/bitrise-api-v0-1-work-in-progress/1554](https://discuss.bitrise.io/t/bitrise-api-v0-1-work-in-progress/1554 "https://discuss.bitrise.io/t/bitrise-api-v0-1-work-in-progress/1554"). Follow it if you want to get notified about new endpoints and changes, we announce those there.
-* If you want to request a new API feature / endpoint, please do it here: [http://discuss.bitrise.io/t/bitrise-public-api/37](http://discuss.bitrise.io/t/bitrise-public-api/37 "http://discuss.bitrise.io/t/bitrise-public-api/37")
+* Join the discussion at: [https://discuss.bitrise.io/t/bitrise-api-v0-1-work-in-progress/1554](https://discuss.bitrise.io/t/bitrise-api-v0-1-work-in-progress/1554). Follow it if you want to get notified about new endpoints and changes, we announce those there.
+* If you want to request a new API feature / endpoint, please do it here: [http://discuss.bitrise.io/t/bitrise-public-api/37](http://discuss.bitrise.io/t/bitrise-public-api/37)
 
 {% include message_box.html type="info" title="Bitrise API endpoint documentation" content="Check out the [Bitrise API endpoint reference documentation](https://api-docs.bitrise.io) to see all currently available endpoints and their parameters!"%}
 
 ## API domain/host and versioning
 
-The Bitrise API's host is: [https://api.bitrise.io/](https://api.bitrise.io/ "https://api.bitrise.io/")
+The Bitrise API's host is: [https://api.bitrise.io/](https://api.bitrise.io/)
 
 Every endpoint except the root one is versioned, and the version have to be included in the URL right after the host.
 
-Example: [https://api.bitrise.io/v0.1/me](https://api.bitrise.io/v0.1/me "https://api.bitrise.io/v0.1/me") (requires authentication)
+Example: [https://api.bitrise.io/v0.1/me](https://api.bitrise.io/v0.1/me) (requires authentication)
 
 Right now we have only one version, `v0.1`.
 
@@ -29,7 +28,7 @@ There's no long term compatibility promise for `v0.1`, although we try to do our
 
 The current API supports only one type of authentication: user generated **Personal Access Tokens**.
 
-Right now **every API endpoint requires authentication**, except the "root" URL ([https://api.bitrise.io](https://api.bitrise.io "https://api.bitrise.io")).
+Right now **every API endpoint requires authentication**, except the "root" URL ([https://api.bitrise.io](https://api.bitrise.io)).
 
 ### Acquiring a Personal Access Token
 
@@ -87,9 +86,9 @@ If you want to iterate through all the items, this is what you have to do:
 
 **Example**
 
-Iterating through all your registered apps:
+Iterating through all your registered apps: 
 
-1. Call `https://api.bitrise.io/v0.1/me/apps`.
+1. Call `[https://api.bitrise.io/v0.1/me/apps](https://api.bitrise.io/v0.1/me/apps)`
 2. Process the items (`data` property)
 3. Check the `paging` (root) property.
 4. If there's a `next` property inside `paging`, call the endpoint again, with the `next` query parameter
@@ -98,26 +97,26 @@ Iterating through all your registered apps:
 
 ## Endpoints
 
-The [Bitrise API endpoint reference documentation](https://api-docs.bitrise.io) lists every available endpoint and their parameters, along with the possible responses. You can also try them out!
+The [Bitrise API endpoint reference documentation](https://api-docs.bitrise.io) lists every available endpoint and their parameters, along with the possible responses. You can also try them out! 
 
 ### Trying the API
 
-You can try out any endpoint in the reference documentation itself! All you need to do is authenticate yourself and provide the required parameters. The API will return the appropriate response based on the call.
+You can try out any endpoint in the reference documentation itself! All you need to do is authenticate yourself and provide the required parameters. The API will return the appropriate response based on the call. 
 
-1. [Acquire a Personal Access Token](/api/v0.1#acquiring-a-personal-access-token).
+1. [Acquire a Personal Access Token](/api/v0.1#acquiring-a-personal-access-token). 
 2. Go to the [Bitrise API endpoint reference documentation](https://api-docs.bitrise.io).
-3. Click `Authorize`.
+3. Click `Authorize`. 
 
    ![](/img/authorize.png)
 4. Paste your Personal Access Token to the `Value` field
 
    ![](/img/available-auth.png)
-5. Click on the endpoint you want to try it out to open its details.
-6. Fill in the required parameters.
-7. Click `Execute`.
+5. Click on the endpoint you want to try it out to open its details. 
+6. Fill in the required parameters. 
+7. Click `Execute`. 
 
 The API will return:
 
-* the `curl` command of your request
+* the `curl` command of your request 
 * the request URL
 * the server response
