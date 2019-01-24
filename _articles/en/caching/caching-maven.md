@@ -1,8 +1,5 @@
 ---
 title: Caching Maven
-menu:
-  caching:
-    weight: 4
 
 ---
 1. Open your app's `Workflow Editor`.
@@ -13,3 +10,5 @@ menu:
 4. In the `Ignore Paths from change check` input of the step, enter `$HOME/.m2`.
 
 And you're done!
+
+Can I save though?
